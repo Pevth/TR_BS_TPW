@@ -1,0 +1,12 @@
+C:\Users\Tomek\source\repos\ConcurrentProgramming\ConcurrentProgramming\bin\Debug\net6.0\ConcurrentProgramming.deps.json
+C:\Users\Tomek\source\repos\ConcurrentProgramming\ConcurrentProgramming\bin\Debug\net6.0\ConcurrentProgramming.dll
+C:\Users\Tomek\source\repos\ConcurrentProgramming\ConcurrentProgramming\bin\Debug\net6.0\ConcurrentProgramming.pdb
+C:\Users\Tomek\source\repos\ConcurrentProgramming\ConcurrentProgramming\obj\Debug\net6.0\ConcurrentProgramming.csproj.AssemblyReference.cache
+C:\Users\Tomek\source\repos\ConcurrentProgramming\ConcurrentProgramming\obj\Debug\net6.0\ConcurrentProgramming.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tomek\source\repos\ConcurrentProgramming\ConcurrentProgramming\obj\Debug\net6.0\ConcurrentProgramming.AssemblyInfoInputs.cache
+C:\Users\Tomek\source\repos\ConcurrentProgramming\ConcurrentProgramming\obj\Debug\net6.0\ConcurrentProgramming.AssemblyInfo.cs
+C:\Users\Tomek\source\repos\ConcurrentProgramming\ConcurrentProgramming\obj\Debug\net6.0\ConcurrentProgramming.csproj.CoreCompileInputs.cache
+C:\Users\Tomek\source\repos\ConcurrentProgramming\ConcurrentProgramming\obj\Debug\net6.0\ConcurrentProgramming.dll
+C:\Users\Tomek\source\repos\ConcurrentProgramming\ConcurrentProgramming\obj\Debug\net6.0\refint\ConcurrentProgramming.dll
+C:\Users\Tomek\source\repos\ConcurrentProgramming\ConcurrentProgramming\obj\Debug\net6.0\ConcurrentProgramming.pdb
+C:\Users\Tomek\source\repos\ConcurrentProgramming\ConcurrentProgramming\obj\Debug\net6.0\ref\ConcurrentProgramming.dll
