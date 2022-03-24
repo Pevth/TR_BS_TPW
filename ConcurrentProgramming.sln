@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrentProgramming", "ConcurrentProgramming\ConcurrentProgramming.csproj", "{E13907E3-70CF-4DA4-9A90-99D5322041BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConcurrentProgramming", "ConcurrentProgramming\ConcurrentProgramming.csproj", "{E13907E3-70CF-4DA4-9A90-99D5322041BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConcurrentProgramming", "TestConcurrentProgramming\TestConcurrentProgramming.csproj", "{06FBA627-62E1-4E59-8884-F25FF5F1C7BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConcurrentProgramming", "TestConcurrentProgramming\TestConcurrentProgramming.csproj", "{06FBA627-62E1-4E59-8884-F25FF5F1C7BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleConcurrentProgramming", "ConsoleConcurrentProgramming\ConsoleConcurrentProgramming.csproj", "{325B88EA-0444-4445-8616-24D3C4097B67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{06FBA627-62E1-4E59-8884-F25FF5F1C7BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06FBA627-62E1-4E59-8884-F25FF5F1C7BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06FBA627-62E1-4E59-8884-F25FF5F1C7BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{325B88EA-0444-4445-8616-24D3C4097B67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{325B88EA-0444-4445-8616-24D3C4097B67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{325B88EA-0444-4445-8616-24D3C4097B67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{325B88EA-0444-4445-8616-24D3C4097B67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
