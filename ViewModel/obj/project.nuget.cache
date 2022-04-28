@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Tyei8zfAY/pHRWPciFYJwV/6kXCvlkLpdts/VR2+sF75sEQkB4mBJNDoXJ1iE55BnMbpSntwJ2ciTFCKzg6LxQ==",
+  "dgSpecHash": "KMPjI6iTHcEEZ1laDVF4uCffZ6hA6HwFjYfJ3ayzs2/YvIjC8RWsWdXxMYj5Icou/+2Vdmx6cc60krMcMXUQzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tomek\\Desktop\\3\\ViewModel\\ViewModel.csproj",
+  "projectFilePath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\ViewModel\\ViewModel.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Tomek\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Tomek\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

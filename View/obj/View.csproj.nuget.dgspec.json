@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tomek\\Desktop\\3\\View\\View.csproj": {}
+    "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\View\\View.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tomek\\Desktop\\3\\Data\\Data.csproj": {
+    "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tomek\\Desktop\\3\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\Tomek\\Desktop\\3\\Data\\Data.csproj",
-        "packagesPath": "C:\\Users\\Tomek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tomek\\Desktop\\3\\Data\\obj\\",
+        "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tomek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,21 +57,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Tomek\\Desktop\\3\\Logic\\Logic.csproj": {
+    "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Logic\\Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tomek\\Desktop\\3\\Logic\\Logic.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Logic\\Logic.csproj",
         "projectName": "Logic",
-        "projectPath": "C:\\Users\\Tomek\\Desktop\\3\\Logic\\Logic.csproj",
-        "packagesPath": "C:\\Users\\Tomek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tomek\\Desktop\\3\\Logic\\obj\\",
+        "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Logic\\Logic.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Logic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tomek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,8 +85,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\Tomek\\Desktop\\3\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\Tomek\\Desktop\\3\\Data\\Data.csproj"
+              "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Data\\Data.csproj"
               }
             }
           }
@@ -118,21 +118,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Tomek\\Desktop\\3\\Model\\Model.csproj": {
+    "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tomek\\Desktop\\3\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\Tomek\\Desktop\\3\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\Tomek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tomek\\Desktop\\3\\Model\\obj\\",
+        "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tomek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -146,8 +146,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\Tomek\\Desktop\\3\\Logic\\Logic.csproj": {
-                "projectPath": "C:\\Users\\Tomek\\Desktop\\3\\Logic\\Logic.csproj"
+              "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Logic\\Logic.csproj": {
+                "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Logic\\Logic.csproj"
               }
             }
           }
@@ -179,21 +179,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Tomek\\Desktop\\3\\ViewModel\\ViewModel.csproj": {
+    "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\ViewModel\\ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tomek\\Desktop\\3\\ViewModel\\ViewModel.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\ViewModel\\ViewModel.csproj",
         "projectName": "ViewModel",
-        "projectPath": "C:\\Users\\Tomek\\Desktop\\3\\ViewModel\\ViewModel.csproj",
-        "packagesPath": "C:\\Users\\Tomek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tomek\\Desktop\\3\\ViewModel\\obj\\",
+        "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\ViewModel\\ViewModel.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\ViewModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tomek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -207,8 +207,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\Tomek\\Desktop\\3\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Tomek\\Desktop\\3\\Model\\Model.csproj"
+              "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\Model\\Model.csproj"
               }
             }
           }
@@ -240,21 +240,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Tomek\\Desktop\\3\\View\\View.csproj": {
+    "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\View\\View.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tomek\\Desktop\\3\\View\\View.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\View\\View.csproj",
         "projectName": "View",
-        "projectPath": "C:\\Users\\Tomek\\Desktop\\3\\View\\View.csproj",
-        "packagesPath": "C:\\Users\\Tomek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tomek\\Desktop\\3\\View\\obj\\",
+        "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\View\\View.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\View\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tomek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -268,8 +268,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Tomek\\Desktop\\3\\ViewModel\\ViewModel.csproj": {
-                "projectPath": "C:\\Users\\Tomek\\Desktop\\3\\ViewModel\\ViewModel.csproj"
+              "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\TR_BS_TPW\\ViewModel\\ViewModel.csproj"
               }
             }
           }
@@ -301,7 +301,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
