@@ -18,3 +18,13 @@ C:\Users\Tomek\Desktop\3\Data\obj\Debug\netstandard2.0\Data.AssemblyInfo.cs
 C:\Users\Tomek\Desktop\3\Data\obj\Debug\netstandard2.0\Data.csproj.CoreCompileInputs.cache
 C:\Users\Tomek\Desktop\3\Data\obj\Debug\netstandard2.0\Data.dll
 C:\Users\Tomek\Desktop\3\Data\obj\Debug\netstandard2.0\Data.pdb
+C:\Users\admin\Documents\GitHub\TR_BS_TPW\Data\bin\Debug\netstandard2.0\Data.deps.json
+C:\Users\admin\Documents\GitHub\TR_BS_TPW\Data\bin\Debug\netstandard2.0\Data.dll
+C:\Users\admin\Documents\GitHub\TR_BS_TPW\Data\bin\Debug\netstandard2.0\Data.pdb
+C:\Users\admin\Documents\GitHub\TR_BS_TPW\Data\obj\Debug\netstandard2.0\Data.csproj.AssemblyReference.cache
+C:\Users\admin\Documents\GitHub\TR_BS_TPW\Data\obj\Debug\netstandard2.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Documents\GitHub\TR_BS_TPW\Data\obj\Debug\netstandard2.0\Data.AssemblyInfoInputs.cache
+C:\Users\admin\Documents\GitHub\TR_BS_TPW\Data\obj\Debug\netstandard2.0\Data.AssemblyInfo.cs
+C:\Users\admin\Documents\GitHub\TR_BS_TPW\Data\obj\Debug\netstandard2.0\Data.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\TR_BS_TPW\Data\obj\Debug\netstandard2.0\Data.dll
+C:\Users\admin\Documents\GitHub\TR_BS_TPW\Data\obj\Debug\netstandard2.0\Data.pdb

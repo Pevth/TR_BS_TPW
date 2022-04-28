@@ -15,9 +15,9 @@
 
         <Canvas Width="900" Height="600">
 
-            <Button Content="Start" MinHeight="50" MinWidth="500" Command="{Binding ButtonClick}" Canvas.Left="166" Canvas.Top="540" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top"/>
+            <Button x:Name="startButton" Content="Start" MinHeight="50" MinWidth="500" Command="{Binding ButtonClick}" Canvas.Left="166" Canvas.Top="540" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top"/>
             <TextBlock Text="Wprowadź ilość kulek:" Canvas.Left="343" Canvas.Top="497" FontSize="15" ></TextBlock>
-            <TextBox Text="{Binding numberOfBalls}" AcceptsReturn="True" Name="InputText" TextWrapping="Wrap" MaxHeight="172" Width="300" ScrollViewer.VerticalScrollBarVisibility="Auto" Canvas.Left="266" Canvas.Top="517" />
+            <TextBox Name="_numberOfBalls" Text="{Binding numberOfBalls}" TextWrapping="Wrap" MaxHeight="172" Width="300" ScrollViewer.VerticalScrollBarVisibility="Auto" Canvas.Left="266" Canvas.Top="517" />
             <Grid Width="400" Height="400" Margin="220,27,25,207">
                 <Border BorderBrush="Black" BorderThickness="5" Height="400" Width="400">
                     <ItemsControl ItemsSource="{Binding Balls}">

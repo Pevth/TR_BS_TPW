@@ -6,19 +6,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Threading;
+
 
 namespace ViewModel
 {
     public class MainWindowViewModel : ViewModelBase
     {
         private ModelAPI ModelAPI { get; set; } = ModelAPI.CreateApi();
-        private int _numberOfBalls = 5;
+        private string _numberOfBalls;
         private Task updating;
+
         public ObservableCollection<BallModel> Balls { get; set; }
 
         public ICommand ButtonClick { get; set; }
 
-        public int numberOfBalls
+
+        public string numberOfBalls
         {
             get
             {
@@ -26,11 +30,12 @@ namespace ViewModel
             }
             set
             {
-                if (value.Equals(_numberOfBalls))
-                    return;
+                _numberOfBalls = value;
                 RaisePropertyChanged("numberOfBalls");
             }
         }
+
+        
 
         public MainWindowViewModel() : this(ModelAPI.CreateApi()) { }
 
@@ -45,9 +50,7 @@ namespace ViewModel
         {
             while (true)
             {
-
                 ObservableCollection<BallModel> treadList = new ObservableCollection<BallModel>();
-
                 foreach (BallModel ball in ModelAPI.ListOfBallModel)
                 {
                     treadList.Add(ball);
@@ -55,16 +58,24 @@ namespace ViewModel
 
                 Balls = treadList;
                 RaisePropertyChanged(nameof(Balls));
-
+                Thread.Sleep(10);
             }
         }
 
-        /// <summary>
-        /// checkthisout
-        /// </summary>
+        public int readNumberOfBalls()
+        {
+            int value;
+            if (Int32.TryParse(numberOfBalls, out value))
+            {
+                value = Int32.Parse(numberOfBalls);
+                return value; 
+            }
+            return 0;
+        }
+
         private void ClickHandler()
         {
-            ModelAPI.createBalls(5);
+            ModelAPI.createBalls(readNumberOfBalls());
             ModelAPI.moveBalls();
 
             updating = new Task(UpdatePosition);
