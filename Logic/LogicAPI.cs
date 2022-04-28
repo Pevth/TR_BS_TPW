@@ -17,9 +17,9 @@ namespace Logic
 
         public abstract Box GenerateBox();
 
-        public static LogicAPI CreateApi(DataAPI data = default) //?
+        public static LogicAPI CreateApi(DataAPI data = default) 
         {
-            return new Logic(data ?? DataAPI.CreateDataBall()); //?
+            return new Logic(data ?? DataAPI.CreateDataBall()); 
         }
 
         private class Logic : LogicAPI

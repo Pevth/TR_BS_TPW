@@ -11,7 +11,7 @@ namespace Logic
         public Vector Position { get; private set; }
         public Vector Velocity { get; private set; }
 
-        internal Ball()
+        public Ball()
         {
             Random rnd = new Random();
             Vector position = new Vector();

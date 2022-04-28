@@ -46,7 +46,7 @@ namespace ViewModel
             ButtonClick = new RelayCommand(() => ClickHandler());
         }
 
-        public void UpdatePosition()
+        public void UpdateBalls()
         {
             while (true)
             {
@@ -73,15 +73,12 @@ namespace ViewModel
             return 0;
         }
 
-        /// <summary>
-        /// test
-        /// </summary>
         private void ClickHandler()
         {
             ModelAPI.createBalls(readNumberOfBalls());
             ModelAPI.moveBalls();
 
-            updating = new Task(UpdatePosition);
+            updating = new Task(UpdateBalls);
             updating.Start();
 
         }
