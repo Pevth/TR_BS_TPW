@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Logic
@@ -31,9 +32,10 @@ namespace Logic
         public void ControlMovingBalls()
         {
             moving = new Task(MoveAllBalls);
+            moving.Start();
         }
 
-        private void MoveAllBalls()
+        public void MoveAllBalls()
         {
             while (true)
             {

@@ -24,8 +24,8 @@ namespace Logic
 
             //-----------------------------
 
-            velocity.X = GetRandomNumber(1.0, 3.0);
-            velocity.Y = GetRandomNumber(1.0, 3.0);
+            velocity.X = GetRandomNumber(1.0, 2.0);
+            velocity.Y = GetRandomNumber(1.0, 2.0);
 
             //-----------------------------
 
@@ -35,10 +35,10 @@ namespace Logic
 
         public void MoveBall(int wall)
         {
-            CollideWall(this.Position, this.Velocity, wall);
+            CollideWall(this.Position, wall);
             Position += Velocity;
         }
-        private void CollideWall(Vector position, Vector velocity, int wall)
+        private void CollideWall(Vector position, int wall)
         {
 
             if (this.Position.X >= wall || position.X < 0)
@@ -48,7 +48,7 @@ namespace Logic
                 this.Velocity.Y *= -1;
 
         }
-        public double GetRandomNumber(double minimum, double maximum)
+        public static double GetRandomNumber(double minimum, double maximum)
         {
             Random random = new Random();
             return random.NextDouble() * (maximum - minimum) + minimum;

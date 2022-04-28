@@ -9,36 +9,48 @@ namespace Logic
 {
     public abstract class LogicAPI
     {
-        public abstract void CreateBalls(int numberOfBalls);
-        public abstract void MoveBalls();
-        public abstract List<Ball> GetBalls();
+        public abstract void CreateBalls(Box box, int numberOfBalls);
+        public abstract void MoveBalls(Box box);
+        public abstract List<Ball> GetBalls(Box box);
 
-        public static LogicAPI CreateLayer(DataAPI data = default) //?
+        public abstract Ball GenerateBall();
+
+        public abstract Box GenerateBox();
+
+        public static LogicAPI CreateApi(DataAPI data = default) //?
         {
             return new Logic(data ?? DataAPI.CreateDataBall()); //?
         }
 
         private class Logic : LogicAPI
         {
-            private Box box;
             private readonly DataAPI dataLayer;
 
             public Logic(DataAPI dataLayerAPI)
             {
                 this.dataLayer = dataLayerAPI;
-                box = new Box(400);
 
             }
 
-            public override void CreateBalls(int numberOfBalls)
+            public override Ball GenerateBall()
             {
-                if(box != null)
+                return new Ball();
+            }
+
+            public override Box GenerateBox()
+            {
+                return new Box(370);
+            }
+
+            public override void CreateBalls(Box box, int numberOfBalls)
+            {
+                if (box != null)
                 {
                     box.CreateBalls(numberOfBalls);
                 }
             }
 
-            public override void MoveBalls()
+            public override void MoveBalls(Box box)
             {
                 if (box != null)
                 {
@@ -46,7 +58,7 @@ namespace Logic
                 }
             }
 
-            public override List<Ball> GetBalls()
+            public override List<Ball> GetBalls(Box box)
             {
                 if (box != null)
                 {
