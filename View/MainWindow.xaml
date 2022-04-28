@@ -1,0 +1,50 @@
+﻿<Window x:Class="View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:ViewModel;assembly=ViewModel"
+        mc:Ignorable="d"
+        Title="Balls" Height="auto" Width="auto">
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
+    
+    
+    <StackPanel Orientation="Vertical">
+
+        <Canvas Width="900" Height="600">
+
+            <Button Content="Start" MinHeight="50" MinWidth="500" Command="{Binding ButtonClick}" Canvas.Left="166" Canvas.Top="540" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top"/>
+            <TextBlock Text="Wprowadź ilość kulek:" Canvas.Left="343" Canvas.Top="497" FontSize="15" ></TextBlock>
+            <TextBox Text="{Binding numberOfBalls}" AcceptsReturn="True" Name="InputText" TextWrapping="Wrap" MaxHeight="172" Width="300" ScrollViewer.VerticalScrollBarVisibility="Auto" Canvas.Left="266" Canvas.Top="517" />
+            <Grid Width="400" Height="400" Margin="220,27,25,207">
+                <Border BorderBrush="Black" BorderThickness="5" Height="400" Width="400">
+                    <ItemsControl ItemsSource="{Binding Balls}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Canvas Height="420" Width="400" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Ellipse Width= "20" Height="20" Fill="Blue" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+
+                        <ItemsControl.ItemContainerStyle>
+                            <Style TargetType="ContentPresenter">
+                                <Setter Property="Canvas.Top" Value="{Binding getPositionX}"/>
+                                <Setter Property="Canvas.Left" Value="{Binding getPositionY}"/>
+                            </Style>
+                        </ItemsControl.ItemContainerStyle>
+                    </ItemsControl>
+
+                </Border>
+            </Grid>
+        </Canvas>
+
+
+    </StackPanel>
+</Window>

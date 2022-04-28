@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "hPe/cSFUQsT4cFuhrC1e9GvALvoQ6ngrwL/G2+Bb9hZ15d+jRWKbgG3wSXcjzyVqI3qQsTTxWw57dPXtY+a+/Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tomek\\Desktop\\3\\Logic\\Logic.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tomek\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Tomek\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
