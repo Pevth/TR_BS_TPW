@@ -8,36 +8,45 @@ namespace Logic
 {
     public class Box
     {
-        public int wall { get; private set; }
+        public int Wall { get; private set; }
         public List<Ball> ListOfBalls { get; private set; }
 
         public Task moving;
 
         public Box(int wallSize)
         {
-            this.wall = wallSize;
+            this.Wall = wallSize;
             this.ListOfBalls = new List<Ball>();
         }
 
-        public void controlMovingBalls()
+        public void CreateBalls(int numberOfBalls)
         {
-            moving = new Task(moveAllBalls);
+            for (int i = 0; i < numberOfBalls; i++)
+            {
+                ListOfBalls.Add(new Ball());
+            }
         }
 
-        private void moveAllBalls()
+
+        public void ControlMovingBalls()
+        {
+            moving = new Task(MoveAllBalls);
+        }
+
+        private void MoveAllBalls()
         {
             while (true)
             {
                 foreach (Ball ball in ListOfBalls)
                 {
-                    ball.moveBall(wall);
+                    ball.MoveBall(Wall);
                 }
                 Thread.Sleep(1);
             }
 
         }
 
-        public List<Ball> getAllBalls()
+        public List<Ball> GetAllBalls()
         {
             return ListOfBalls;
         }

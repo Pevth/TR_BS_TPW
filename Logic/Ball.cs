@@ -8,8 +8,8 @@ namespace Logic
 {
     public class Ball
     {
-        public Vector position { get; private set; }
-        public Vector velocity { get; private set; }
+        public Vector Position { get; private set; }
+        public Vector Velocity { get; private set; }
 
         internal Ball()
         {
@@ -29,26 +29,26 @@ namespace Logic
 
             //-----------------------------
 
-            this.position = position;
-            this.velocity = velocity;
+            this.Position = position;
+            this.Velocity = velocity;
         }
 
-        internal void moveBall(int wall)
+        public void MoveBall(int wall)
         {
-            collideWall(this.position, this.velocity, wall);
-            position += velocity;
+            CollideWall(this.Position, this.Velocity, wall);
+            Position += Velocity;
         }
-        private void collideWall(Vector position, Vector velocity, int wall)
+        private void CollideWall(Vector position, Vector velocity, int wall)
         {
 
-            if (this.position.X >= wall || position.X < 0)
-                this.velocity.X *= -1;
+            if (this.Position.X >= wall || position.X < 0)
+                this.Velocity.X *= -1;
 
-            if (this.position.Y >= wall || position.Y < 0)
-                this.velocity.Y *= -1;
+            if (this.Position.Y >= wall || position.Y < 0)
+                this.Velocity.Y *= -1;
 
         }
-        private double GetRandomNumber(double minimum, double maximum)
+        public double GetRandomNumber(double minimum, double maximum)
         {
             Random random = new Random();
             return random.NextDouble() * (maximum - minimum) + minimum;
