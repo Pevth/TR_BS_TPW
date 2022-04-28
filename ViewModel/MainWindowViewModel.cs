@@ -73,6 +73,9 @@ namespace ViewModel
             return 0;
         }
 
+        /// <summary>
+        /// test
+        /// </summary>
         private void ClickHandler()
         {
             ModelAPI.createBalls(readNumberOfBalls());
