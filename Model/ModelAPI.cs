@@ -1,57 +1,67 @@
 ﻿using Logic;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Reactive;
+using System.Reactive.Linq;
 
 namespace Model
 {
-    public abstract class ModelAPI
+    public class BallChaneEventArgs : EventArgs
     {
-        public abstract List<BallModel> ListOfBallModel { get; }
+        public IBall Ball { get; set; }
+    }
 
-        public abstract void createBalls(int numberOfBalls);
-
-        public abstract void moveBalls();
-
+    public abstract class ModelAPI : IObservable<IBall>
+    {
         public static ModelAPI CreateApi()
         {
-            return new Model();
+            return new ModelBall();
         }
 
+        public abstract void OKLetsGo(int ballsAmount);
 
-        internal class Model : ModelAPI
+        #region IObservable
+
+        public abstract IDisposable Subscribe(IObserver<IBall> observer);
+
+        #endregion IObservable
+
+        internal class ModelBall : ModelAPI
         {
-            internal LogicAPI LogicAPI;
+            private LogicAPI logicApi;
+            public event EventHandler<BallChaneEventArgs> BallChanged;
 
-            public BoxModel boxX;
-            public override List<BallModel> ListOfBallModel => CopyBallFromBox();
+            private IObservable<EventPattern<BallChaneEventArgs>> eventObservable = null;
+            private List<BallModel> Balls = new List<BallModel>();
 
-            public Model()
+            public ModelBall()
             {
-                LogicAPI = LogicAPI ?? LogicAPI.CreateApi();
-                boxX = new BoxModel(LogicAPI.GenerateBox());
+                logicApi = logicApi ?? LogicAPI.CreateLayer();
+                IDisposable observer = logicApi.Subscribe<int>(x => Balls[x].Move(logicApi.GetBallPositionX(x), logicApi.GetBallPositionY(x)));
+                eventObservable = Observable.FromEventPattern<BallChaneEventArgs>(this, "BallChanged");
             }
 
-            public override void createBalls(int numberOfBalls)
+            public override void OKLetsGo(int numberofballs)
             {
-                LogicAPI.CreateBalls(boxX.box, numberOfBalls);
-            }
-
-            public override void moveBalls()
-            {
-                LogicAPI.MoveBalls(boxX.box);
-            }
-
-            public List<BallModel> CopyBallFromBox()
-            {
-                List<BallModel> copiesOfBall = new List<BallModel>();
-
-                foreach (Ball ball in LogicAPI.GetBalls(boxX.box))
+                logicApi.OKLetsGo(numberofballs);
+                for (int i = 0; i < numberofballs; i++)
                 {
-                    copiesOfBall.Add(new BallModel(ball));
+                    BallModel newBall = new BallModel(logicApi.GetBallPositionX(i), logicApi.GetBallPositionY(i), logicApi.GetBallDiameter(i));
+                    Balls.Add(newBall);
                 }
 
-                return copiesOfBall;
+                foreach (BallModel ball in Balls)
+                {
+                    BallChanged?.Invoke(this, new BallChaneEventArgs() { Ball = ball });
+                }
+
             }
 
+            public override IDisposable Subscribe(IObserver<IBall> observer)
+            {
+                return eventObservable.Subscribe(x => observer.OnNext(x.EventArgs.Ball), ex => observer.OnError(ex), () => observer.OnCompleted());
+            }
         }
     }
 }
