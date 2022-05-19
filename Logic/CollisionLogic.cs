@@ -54,7 +54,7 @@ namespace Logic
             Vector ballOnePerpendicular = centresVector.PerpendicularComponent(ball1.Velocity);
             Vector ballTwoPerpendicular = centresVector.PerpendicularComponent(ball2.Velocity);
 
-            //Vector3 ballOnePara = centresVector.ParralelComponent(velocityOne);
+            //Vector ballOnePara = centresVector.ParralelComponent(velocityOne);
             Vector ballTwoPara = centresVector.ParralelComponent(ball2.Velocity);
 
             Vector ballOneNewVelocity = ballTwoPara + ballOnePerpendicular; //http://sinepost.wordpress.com/category/mathematics/geometry/trigonometry/
@@ -70,6 +70,7 @@ namespace Logic
                 {
                     for (int j = i + 1; j < ListOfBalls.Count; j++)
                     {
+
                         CheckCollision(ListOfBalls[i],ListOfBalls[j]);
                     }
                 }
@@ -110,9 +111,9 @@ namespace Logic
 
         public void kolizja(int index)
         {
-            for (int j = index + 1; j < ListOfBalls.Count; j++)
-            {
-                CheckCollision(ListOfBalls[index], ListOfBalls[j]);
+            for (int j = index; j < ListOfBalls.Count; j++)
+            {              
+                    CheckCollision(ListOfBalls[index], ListOfBalls[j]);          
             }
         }
 

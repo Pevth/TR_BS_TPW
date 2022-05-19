@@ -13,7 +13,7 @@ namespace Data
         public Vector Position { get; set; }
         public Vector Center { get; set; }
         public Vector Velocity { get; set; }
-        public int diameter = 30;
+        public int diameter = 20;
         public double mass = 10;
         private Task BallTask;
         private Stopwatch Stopwatch = new Stopwatch();
@@ -34,8 +34,8 @@ namespace Data
 
             //-----------------------------
 
-            velocity.X = GetRandomNumber(-5, 5);
-            velocity.Y = GetRandomNumber(-5, 5);
+            velocity.X = GetRandomNumber(-1, 1);
+            velocity.Y = GetRandomNumber(-1, 1);
 
             //-----------------------------
 
@@ -56,8 +56,6 @@ namespace Data
             {
                 MoveBall();
 
-
-
                 foreach (var observer in observers.ToList())
                 {
                     if (observer != null)
@@ -66,7 +64,7 @@ namespace Data
                     }
                 }
 
-                System.Threading.Thread.Sleep(10);
+                System.Threading.Thread.Sleep(1);
 
             }
         }

@@ -78,27 +78,25 @@ namespace Logic
                 Monitor.Enter(_lock);
                 try
                 {
-                    /*
-                    CollisionLogic CollisionLogic = new CollisionLogic(DataAPI.GetListOfBalls());
-                    CollisionLogic.ControlBallCollisions();
-                    CollisionLogic.ControlWallCollisions();  
-                    */
+                    
                     CollisionLogic CollisionLogic = new CollisionLogic(DataAPI.GetListOfBalls());
 
-                    for (int i = 0; i < DataAPI.GetNumberOfBalls(); i++)
+                    for (int i = 0; i < CollisionLogic.ListOfBalls.Count; i++)
                     {
-                        CollisionLogic.wall(i);
-                        CollisionLogic.kolizja(i);
+
+                        if(CollisionLogic.ListOfBalls.Count % 2 == 0)
+                        {
+
+                        }
+
+                        if(value != i)
+                        {
+                            CollisionLogic.wall(i);
+                            CollisionLogic.kolizja(i);
+                        }              
                     }
 
-                    /*
-                    foreach (var ball in CollisionLogic.ListOfBalls)
-                    {
-                        CollisionLogic.CollideWall(ball);
-                        CollisionLogic.kolizja2(ball);
-                    } 
-                    */
-
+                    
                     BallChanged?.Invoke(this, new BallChaneEventArgs() { ballId = value });
                 }
                 catch (SynchronizationLockException exception)
