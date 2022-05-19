@@ -9,8 +9,8 @@
     <Window.DataContext>
         <vm:MainWindowViewModel />
     </Window.DataContext>
-    
-    
+
+
     <StackPanel Orientation="Vertical">
 
         <Canvas Width="900" Height="600">
@@ -29,14 +29,14 @@
 
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Ellipse Width= "20" Height="20" Fill="Blue" />
+                                <Ellipse Width= "{Binding Diameter}" Height="{Binding Diameter}" Fill="Blue" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
 
                         <ItemsControl.ItemContainerStyle>
                             <Style TargetType="ContentPresenter">
-                                <Setter Property="Canvas.Top" Value="{Binding getPositionX}"/>
-                                <Setter Property="Canvas.Left" Value="{Binding getPositionY}"/>
+                                <Setter Property="Canvas.Top" Value="{Binding Top}"/>
+                                <Setter Property="Canvas.Left" Value="{Binding Left}"/>
                             </Style>
                         </ItemsControl.ItemContainerStyle>
                     </ItemsControl>
