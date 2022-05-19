@@ -1,2 +1,16 @@
 .vs
 .git
+Data/bin
+Data/obj
+DataTest/bin
+DataTest/obj
+Logic/bin
+Logic/obj
+LogicTest/bin
+LogicTest/obj
+Model/bin
+Model/obj
+View/bin
+View/obj
+ViewModel/bin
+ViewModel/obj
