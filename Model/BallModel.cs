@@ -12,9 +12,6 @@ namespace Model
     public class BallModel : IBall
     {
         public int Diameter { get; }
-        public double Top { get; }
-        public double Left { get; }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         public BallModel(double top, double left, int diameter)
@@ -23,5 +20,45 @@ namespace Model
             Left = left;
             Diameter = diameter;
         }
+
+        private double top;
+
+        public double Top
+        {
+            get { return top; }
+            set
+            {
+                if (top == value)
+                    return;
+                top = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        private double left;
+
+        public double Left
+        {
+            get { return left; }
+            set
+            {
+                if (left == value)
+                    return;
+                left = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public void Move(double poitionX, double positionY)
+        {
+            Left = poitionX;
+            Top = positionY;
+        }
+
+        private void RaisePropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
     }
 }
