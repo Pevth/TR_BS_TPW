@@ -1,26 +1,27 @@
-﻿using Logic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+using Logic;
 
 namespace Model
 {
-    public class BallModel
+    public class BallModel : IBall
     {
-        private Ball ball;
+        public int Diameter { get; }
+        public double Top { get; }
+        public double Left { get; }
 
-        public BallModel(Ball ball)
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public BallModel(double top, double left, int diameter)
         {
-            this.ball = ball;
+            Top = top;
+            Left = left;
+            Diameter = diameter;
         }
-
-
-        public double getPositionX
-        {
-            get { return ball.Position.X; }
-        }
-
-        public double getPositionY
-        {
-            get { return ball.Position.Y; }
-        }
-
     }
 }
