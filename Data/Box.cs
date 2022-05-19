@@ -5,18 +5,16 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Logic
+namespace Data
 {
     public class Box
     {
         public int Wall { get; private set; }
         public List<Ball> ListOfBalls { get; private set; }
 
-        public Task moving;
-
-        public Box(int wallSize)
+        public Box()
         {
-            this.Wall = wallSize;
+            this.Wall = 370;
             this.ListOfBalls = new List<Ball>();
         }
 
@@ -24,33 +22,20 @@ namespace Logic
         {
             for (int i = 0; i < numberOfBalls; i++)
             {
-                ListOfBalls.Add(new Ball());
+                Ball ball = new Ball();
+                ball.Id = i;
+                ListOfBalls.Add(ball);
             }
-        }
-
-
-        public void ControlMovingBalls()
-        {
-            moving = new Task(MoveAllBalls);
-            moving.Start();
-        }
-
-        public void MoveAllBalls()
-        {
-            while (true)
-            {
-                foreach (Ball ball in ListOfBalls)
-                {
-                    ball.MoveBall(Wall);
-                }
-                Thread.Sleep(1);
-            }
-
         }
 
         public List<Ball> GetAllBalls()
         {
             return ListOfBalls;
+        }
+
+        public Ball GetBall(int index)
+        {
+            return ListOfBalls[index];
         }
 
 
