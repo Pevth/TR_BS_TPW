@@ -29,13 +29,13 @@ namespace Data
 
             //position X i Y jest zaczytana z Vectora
 
-            position.X = rnd.Next(300);
-            position.Y = rnd.Next(300);
+            position.X = GetRandomNumber(30, 340);
+            position.Y = GetRandomNumber(30, 340);
 
             //-----------------------------
 
-            velocity.X = GetRandomNumber(-1, 1);
-            velocity.Y = GetRandomNumber(-1, 1);
+            velocity.X = GetRandomNumber(-0.75, 0.75);
+            velocity.Y = GetRandomNumber(-0.75, 0.75);
 
             //-----------------------------
 

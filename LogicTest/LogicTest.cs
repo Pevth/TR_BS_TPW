@@ -1,63 +1,83 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Logic;
+using Data;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace LogicTest
 {
     [TestClass]
     public class LogicTest
     {
+        
         [TestMethod]
-        public void BallMovingTest()
+        public void CollideWallTest()
         {
-
-            Box box = new Box(370);
+            CollisionLogic collisionLogic = new CollisionLogic();
             Ball ball = new Ball();
+            ball.Position.X = 369;
+            ball.Position.Y = 369;
+            ball.Velocity.X = 1;
+            ball.Velocity.Y = 1;
 
-            double startingPositionX = ball.Position.X;
-            double startingPositionY = ball.Position.Y;
+            ball.MoveBall();
+            collisionLogic.CollideWall(ball);
 
-            ball.MoveBall(box.Wall);
-
-            Assert.AreEqual(ball.Position.X, startingPositionX + ball.Velocity.X);
-            Assert.AreEqual(ball.Position.Y, startingPositionY + ball.Velocity.Y);
-
-        }
-
-
-        [TestMethod]
-        public void BallConstructorTest()
-        {
-            Ball ball = new Ball();
-
-            Assert.IsNotNull(ball.Position.X);
-            Assert.IsNotNull(ball.Position.Y);
-            Assert.IsNotNull(ball.Velocity.X);
-            Assert.IsNotNull(ball.Velocity.Y);
+            Assert.AreEqual(ball.Velocity.X, -1);
+            Assert.AreEqual(ball.Velocity.Y, -1);
         }
 
         [TestMethod]
-        public void CreatingBallsTest()
+        public void DetectCollisionTest()
         {
-            Box box = new Box(370);
-            int numberOfBalls = 5;
+            CollisionLogic collisionLogic = new CollisionLogic();
+            Ball ball1 = new Ball();
+            ball1.Position.X = 235;
+            ball1.Position.Y = 85;
+            ball1.Center = ball1.Position + new Vector(ball1.diameter / 2, ball1.diameter / 2);
+            ball1.Velocity.X = 10;
+            ball1.Velocity.Y = 10;
 
-            box.CreateBalls(numberOfBalls);
+            Ball ball2 = new Ball();
+            ball2.Position.X = 250;
+            ball2.Position.Y = 100;
+            ball2.Center = ball2.Position + new Vector(ball2.diameter / 2, ball2.diameter / 2);
+            ball2.Velocity.X = 0;
+            ball2.Velocity.Y = 0;
 
-            Assert.AreEqual(box.ListOfBalls.Count, numberOfBalls);     
+            ball1.MoveBall();
 
+            Assert.IsTrue(collisionLogic.DetectCollision(ball1, ball2));
         }
-
 
         [TestMethod]
-        public void BoxConstructorTest()
-        {
-            int wall = 400;
-            Box box = new Box(wall);
 
-            Assert.AreEqual(wall, box.Wall);
+        public void ChangeVelocitiesTest()
+        {
+            CollisionLogic collisionLogic = new CollisionLogic();
+            Ball ball1 = new Ball();
+            ball1.Position.X = 235;
+            ball1.Position.Y = 85;
+            ball1.Center = ball1.Position + new Vector(ball1.diameter / 2, ball1.diameter / 2);
+            ball1.Velocity.X = 10;
+            ball1.Velocity.Y = 10;
+
+            Ball ball2 = new Ball();
+            ball2.Position.X = 250;
+            ball2.Position.Y = 100;
+            ball2.Center = ball2.Position + new Vector(ball2.diameter / 2, ball2.diameter / 2);
+            ball2.Velocity.X = 0;
+            ball2.Velocity.Y = 0;
+
+            Vector tempVelocity = ball1.Velocity;
+
+            collisionLogic.ChangeVelocities(ball1,ball2);
+
+            Assert.AreNotEqual(collisionLogic.ChangeVelocities(ball1, ball2), tempVelocity);
         }
+
+
 
 
     }

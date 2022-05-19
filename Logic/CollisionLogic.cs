@@ -10,12 +10,15 @@ namespace Logic
     public class CollisionLogic
     {
         public List<Ball> ListOfBalls { get; set; }
-        private Task controlballcollisions;
-        private Task controlwallcollisions;
-
+        
         public CollisionLogic(List <Ball> BallList)
         {
             ListOfBalls = BallList;
+        }
+
+        public CollisionLogic()
+        {
+            
         }
 
         public void CollideWall(Ball ball1)
@@ -48,82 +51,32 @@ namespace Logic
             }
         }
 
-        private static Vector ChangeVelocities(Ball ball1, Ball ball2)
+        public Vector ChangeVelocities(Ball ball1, Ball ball2)
         {
             Vector centresVector = ball2.Center - ball1.Center;
             Vector ballOnePerpendicular = centresVector.PerpendicularComponent(ball1.Velocity);
             Vector ballTwoPerpendicular = centresVector.PerpendicularComponent(ball2.Velocity);
 
-            //Vector ballOnePara = centresVector.ParralelComponent(velocityOne);
             Vector ballTwoPara = centresVector.ParralelComponent(ball2.Velocity);
 
-            Vector ballOneNewVelocity = ballTwoPara + ballOnePerpendicular; //http://sinepost.wordpress.com/category/mathematics/geometry/trigonometry/
+            Vector ballOneNewVelocity = ballTwoPara + ballOnePerpendicular; 
 
-            return ballOneNewVelocity; //returns the new velocity of the first ball passed to it
+            return ballOneNewVelocity;
         }
 
-        public void CheckingBallCollisons()
-        {
-            while (true)
-            {
-                for (var i = 0; i < ListOfBalls.Count; i++)
-                {
-                    for (int j = i + 1; j < ListOfBalls.Count; j++)
-                    {
-
-                        CheckCollision(ListOfBalls[i],ListOfBalls[j]);
-                    }
-                }
-                Thread.Sleep(10);
-            }
-        }
-
-        public void CheckingWallCollisons()
-        {
-            while (true)
-            {
-                for (var i = 0; i < ListOfBalls.Count; i++)
-                {
-                    CollideWall(ListOfBalls[i]);
-                }
-                Thread.Sleep(10);
-            }
-        }
-
-       
-
-        public void ControlWallCollisions()
-        {
-            controlwallcollisions = new Task(CheckingWallCollisons);
-            controlwallcollisions.Start();
-        }
-
-        public void ControlBallCollisions()
-        {
-            controlballcollisions = new Task(CheckingBallCollisons);
-            controlballcollisions.Start();
-        }
-
-        public void wall(int index)
+        public void CollideWallChecking(int index)
         {
             CollideWall(ListOfBalls[index]);
         }
 
-        public void kolizja(int index)
+        public void CollisionBallChecking(int index)
         {
             for (int j = index; j < ListOfBalls.Count; j++)
             {              
-                    CheckCollision(ListOfBalls[index], ListOfBalls[j]);          
+                CheckCollision(ListOfBalls[index], ListOfBalls[j]);          
             }
         }
 
-        public void kolizja2(Ball ball)
-        {
-            foreach(Ball ball2 in ListOfBalls)
-            {
-                CheckCollision(ball, ball2);
-            }          
-        }
 
 
 

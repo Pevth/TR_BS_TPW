@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ViewModel
 {
-    public class MainWindowViewModel : ViewModelBase  ///tu jak cos zmienic na inotify
+    public class MainWindowViewModel : ViewModelBase  
     {
         private ModelAPI ModelAPI { get; set; } = ModelAPI.CreateApi();
         private string _numberOfBalls;

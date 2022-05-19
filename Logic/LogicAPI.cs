@@ -27,7 +27,7 @@ namespace Logic
 
         public class BallChaneEventArgs : EventArgs
         {
-            public int ballId { get; set; }     ///nie wiem o co chodzi ale na razie wzialem 
+            public int ballId { get; set; }      
         }
 
         private class Logic : LogicAPI, IObservable<int>
@@ -83,25 +83,22 @@ namespace Logic
 
                     for (int i = 0; i < CollisionLogic.ListOfBalls.Count; i++)
                     {
-
-                        if(CollisionLogic.ListOfBalls.Count % 2 == 0)
+                        if(CollisionLogic.ListOfBalls.Count % 2 != 0)
                         {
-
+                            CollisionLogic.CollideWallChecking(i);
+                            CollisionLogic.CollisionBallChecking(i);
                         }
-
-                        if(value != i)
+                        else
                         {
-                            CollisionLogic.wall(i);
-                            CollisionLogic.kolizja(i);
-                        }              
+                            if (value != i)
+                            {
+                                CollisionLogic.CollideWallChecking(i);
+                                CollisionLogic.CollisionBallChecking(i);
+                            }
+                        }            
                     }
-
-                    
+ 
                     BallChanged?.Invoke(this, new BallChaneEventArgs() { ballId = value });
-                }
-                catch (SynchronizationLockException exception)
-                {
-                    throw new Exception("Checking collision synchronization lock not working", exception);
                 }
                 finally
                 {

@@ -92,10 +92,7 @@ namespace Data
 
         public Vector PerpendicularComponent(Vector v2)
         {
-            //subtract the parallel component from the orginal vecot
-            //to get the orthogonal bit
-
-            return new Vector(v2 - this.ParralelComponent(v2)); // perpendicular component = vectorAnswer - parallel component
+            return new Vector(v2 - this.ParralelComponent(v2)); 
         }
 
     }
