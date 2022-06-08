@@ -16,7 +16,8 @@ namespace Data
         public int diameter = 20;
         public double mass = 10;
         private Task BallTask;
-        private Stopwatch Stopwatch = new Stopwatch();
+        private Stopwatch Timer = new Stopwatch();
+        private Logger log;
 
         internal readonly IList<IObserver<int>> observers;
         public Ball()
@@ -24,6 +25,7 @@ namespace Data
             Random rnd = new Random();
             Vector position = new Vector();
             Vector velocity = new Vector();
+            Logger Log = new Logger();
 
             observers = new List<IObserver<int>>();
 
@@ -34,14 +36,15 @@ namespace Data
 
             //-----------------------------
 
-            velocity.X = GetRandomNumber(-0.75, 0.75);
-            velocity.Y = GetRandomNumber(-0.75, 0.75);
+            velocity.X = GetRandomNumber(-0.2, 0.2);
+            velocity.Y = GetRandomNumber(-0.2, 0.2);
 
             //-----------------------------
 
             this.Position = position;
             this.Velocity = velocity;
             this.Center = position + new Vector(this.diameter / 2, this.diameter / 2);
+            this.log = Log;
         }
 
         public void MoveBallTask()
@@ -54,8 +57,10 @@ namespace Data
         {
             while (true)
             {
-                MoveBall();
-
+                Timer.Restart();
+                Timer.Start();
+                MoveBall(Timer.ElapsedMilliseconds);
+                BallLog(ToString());
                 foreach (var observer in observers.ToList())
                 {
                     if (observer != null)
@@ -63,16 +68,48 @@ namespace Data
                         observer.OnNext(Id);
                     }
                 }
-
-                System.Threading.Thread.Sleep(1);
+                Timer.Stop();
+                //System.Threading.Thread.Sleep(1);
 
             }
         }
 
-        public void MoveBall()
+
+        public void MoveBall(long time)
         {
-            Position += Velocity;
-            Center += Velocity;
+            if (time > 0)
+            {
+
+                Position += Velocity * time;
+                Center += Velocity * time;
+                /*
+                Position.X += Velocity.X * time;
+                Position.Y += Velocity.Y * time;
+                Center.X += Velocity.X  * time;
+                Center.Y += Velocity.Y  * time;
+                */
+            }
+            else
+            {
+                Position += Velocity;
+                Center += Velocity;
+                /*
+                Position.X += Velocity.X;
+                Position.Y += Velocity.Y;
+                Center.X += Velocity.X;
+                Center.Y += Velocity.Y;
+                */
+            }
+        }
+
+        public void BallLog(string stats)
+        {
+            log.log(stats);
+        }
+
+        public override string ToString()
+        {
+            return "ID: " + Id + "Position.X: " + Position.X + "Position.Y: " + Position.Y + "Velocity.X: " + Velocity.X + "Velocity.Y: " + Velocity.Y;
         }
 
 
