@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime;
 
 namespace Data
 {
@@ -17,15 +18,14 @@ namespace Data
         public double mass = 10;
         private Task BallTask;
         private Stopwatch Timer = new Stopwatch();
-        private Logger log;
+        public Logger log;
 
         internal readonly IList<IObserver<int>> observers;
         public Ball()
         {
             Random rnd = new Random();
             Vector position = new Vector();
-            Vector velocity = new Vector();
-            Logger Log = new Logger();
+            Vector velocity = new Vector();            
 
             observers = new List<IObserver<int>>();
 
@@ -43,8 +43,7 @@ namespace Data
 
             this.Position = position;
             this.Velocity = velocity;
-            this.Center = position + new Vector(this.diameter / 2, this.diameter / 2);
-            this.log = Log;
+            this.Center = position + new Vector(this.diameter / 2, this.diameter / 2);           
         }
 
         public void MoveBallTask()
@@ -60,7 +59,7 @@ namespace Data
                 Timer.Restart();
                 Timer.Start();
                 MoveBall(Timer.ElapsedMilliseconds);
-                BallLog(ToString());
+                BallLog();              
                 foreach (var observer in observers.ToList())
                 {
                     if (observer != null)
@@ -68,8 +67,7 @@ namespace Data
                         observer.OnNext(Id);
                     }
                 }
-                Timer.Stop();
-                //System.Threading.Thread.Sleep(1);
+                Timer.Stop();               
 
             }
         }
@@ -79,37 +77,26 @@ namespace Data
         {
             if (time > 0)
             {
-
                 Position += Velocity * time;
                 Center += Velocity * time;
-                /*
-                Position.X += Velocity.X * time;
-                Position.Y += Velocity.Y * time;
-                Center.X += Velocity.X  * time;
-                Center.Y += Velocity.Y  * time;
-                */
+               
             }
             else
             {
                 Position += Velocity;
-                Center += Velocity;
-                /*
-                Position.X += Velocity.X;
-                Position.Y += Velocity.Y;
-                Center.X += Velocity.X;
-                Center.Y += Velocity.Y;
-                */
+                Center += Velocity;              
             }
         }
 
-        public void BallLog(string stats)
+
+        public void BallLog()
         {
-            log.log(stats);
+            log.log(this);
         }
 
         public override string ToString()
         {
-            return "ID: " + Id + "Position.X: " + Position.X + "Position.Y: " + Position.Y + "Velocity.X: " + Velocity.X + "Velocity.Y: " + Velocity.Y;
+            return "ID: " + Id + "Position.X: " + Math.Round(Position.X, 4) + "Position.Y: " + Math.Round(Position.Y,4) + "Velocity.X: " + Math.Round(Velocity.X,4) + "Velocity.Y: " + Math.Round(Velocity.Y,4);
         }
 
 

@@ -11,7 +11,7 @@ namespace Data
     {
         public int Wall { get; private set; }
         public List<Ball> ListOfBalls { get; private set; }
-
+        private Logger log;
         public Box()
         {
             this.Wall = 370;
@@ -20,10 +20,12 @@ namespace Data
 
         public void CreateBalls(int numberOfBalls)
         {
+            log = new Logger();
             for (int i = 0; i < numberOfBalls; i++)
             {
                 Ball ball = new Ball();
                 ball.Id = i;
+                ball.log = log;
                 ListOfBalls.Add(ball);
             }
         }
