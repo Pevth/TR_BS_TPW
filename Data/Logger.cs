@@ -19,8 +19,7 @@ namespace Data
         {
             dateTime = DateTime.Now;
             string sData = dateTime.ToString();
-            sData = sData.Replace(" ", "_");
-            sData = sData.Replace(":", "-");
+            sData = sData.Replace(" ", "_").Replace(":", "-");
             return sData;
         }
     }
