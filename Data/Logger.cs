@@ -10,14 +10,28 @@ using System.Threading;
 
 namespace Data
 {
-    
+
+    public static class Time
+    {
+        public static DateTime dateTime;
+
+        public static string getData()
+        {
+            dateTime = DateTime.Now;
+            string sData = dateTime.ToString();
+            sData = sData.Replace(" ", "_");
+            sData = sData.Replace(":", "-");
+            return sData;
+        }
+    }
+
     public class Logger: IDisposable
     {
+        public static string filePath = $@"{AppDomain.CurrentDomain.BaseDirectory}/Logs/";
         BlockingCollection<string> fifo;
         StreamWriter sw;
-        static object _lock = new object();
-        string filename = "Ball.log";
-        private void endlessLoop()
+        string filename = $"{filePath}Ball_{Time.getData()}.log";
+        private void fifoControllLoop()
         {           
             try
             {               
@@ -33,11 +47,20 @@ namespace Data
                                     
         }
 
+        public void isFolderExist()
+        {
+            if (!Directory.Exists($@"{AppDomain.CurrentDomain.BaseDirectory}/Logs"))
+            {
+                Directory.CreateDirectory($@"{AppDomain.CurrentDomain.BaseDirectory}/Logs");
+            }
+        }
+
         public Logger()
         {
+            isFolderExist();
             fifo = new BlockingCollection<string>();        
             sw = new StreamWriter(filename, true);            
-            Task.Run(endlessLoop);                     
+            Task.Run(fifoControllLoop);                     
         }
 
         public void log(Ball ball) => fifo.Add(DateTime.Now.ToString("HH:mm:ss ") + " ID: " + ball.Id + " Position.X: " + Math.Round(ball.Position.X, 4) + " Position.Y: " + Math.Round(ball.Position.Y, 4) + " Velocity.X: " + Math.Round(ball.Velocity.X, 4) + " Velocity.Y: " + Math.Round(ball.Velocity.Y, 4));
