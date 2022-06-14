@@ -18,15 +18,14 @@ namespace Data
         public static string getData()
         {
             dateTime = DateTime.Now;
-            string sData = dateTime.ToString();
-            sData = sData.Replace(" ", "_").Replace(":", "-");
+            string sData = dateTime.ToString("'D'yyyy-MM-dd'T'HH-mm-ss");
             return sData;
         }
     }
 
     public class Logger: IDisposable
     {
-        public static string filePath = $@"{AppDomain.CurrentDomain.BaseDirectory}/Logs/";
+        public static string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");
         BlockingCollection<string> fifo;
         StreamWriter sw;
         string filename = $"{filePath}Ball_{Time.getData()}.log";
@@ -48,9 +47,9 @@ namespace Data
 
         public void isFolderExist()
         {
-            if (!Directory.Exists($@"{AppDomain.CurrentDomain.BaseDirectory}/Logs"))
+            if (!Directory.Exists(filePath))
             {
-                Directory.CreateDirectory($@"{AppDomain.CurrentDomain.BaseDirectory}/Logs");
+                Directory.CreateDirectory(filePath);
             }
         }
 

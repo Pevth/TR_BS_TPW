@@ -36,24 +36,7 @@ namespace DataTest
             Assert.IsNotNull(ball.diameter);
             Assert.IsNotNull(ball.mass);
         }
-
-        [TestMethod]
-        public void CreatingBallsTest()
-        {
-            Box box = new Box();
-            int numberOfBalls = 6;
-
-            box.CreateBalls(numberOfBalls);
-
-            Assert.AreEqual(box.ListOfBalls.Count, numberOfBalls);
-            Assert.AreEqual(box.ListOfBalls[0].Id, 0);
-            Assert.AreEqual(box.ListOfBalls[1].Id, 1);
-            Assert.AreEqual(box.ListOfBalls[2].Id, 2);
-            Assert.AreEqual(box.ListOfBalls[3].Id, 3);
-            Assert.AreEqual(box.ListOfBalls[4].Id, 4);
-            Assert.AreEqual(box.ListOfBalls[5].Id, 5);
-        }
-
+       
 
         [TestMethod]
         public void BoxConstructorTest()
