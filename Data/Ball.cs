@@ -88,6 +88,12 @@ namespace Data
             }
         }
 
+        public void MoveBall()
+        {
+            Position += Velocity;
+            Center += Velocity;
+        }
+
 
         public void BallLog()
         {
